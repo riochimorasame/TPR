@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeunesse TPR</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style 2.css" />
+  <link rel="stylesheet" href="style-jeunesse.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#accueil">Jeunesse TPR</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home me-2"></i>Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sections"><i class="fas fa-hand-sparkles me-2"></i>Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#calendrier"><i class="fas fa-calendar-alt me-2"></i>Calendrier</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#galerie"><i class="fas fa-camera-retro me-2"></i>Galerie</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#quiz"><i class="fas fa-brain me-2"></i>Quiz</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact"><i class="fas fa-envelope-open-text me-2"></i>Contact</a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <button class="btn btn-outline-secondary dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+              <i class="fas fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="slider-container">
+    <img src="/images_Church/Gods_love.jpg" alt="Image 1" class="slider-image active" loading="lazy">
+    <img src="/images_Church/jeune_priere_2.jpg" alt="Image 2" class="slider-image" loading="lazy">
+    <img src="/images_Church/lecture_bible.jpg" alt="Image 3" class="slider-image" loading="lazy">
+  </div>
+
+  <main class="section-padding bg-light">
+    <div class="container text-center">
+      <div id="accueil">
+        <h1 class="section-title">✨ Bienvenue! ✨</h1>
+        <p class="lead">Une génération passionnée pour Christ, engagée dans la foi, la fraternité et le service.</p>
+      </div>
+
+      <div class="row g-4 mt-4" id="sections">
+        <div class="col-md-4">
+          <div class="card h-100 p-4 shadow-sm">
+            <i class="fas fa-users-line fa-2x mb-3"></i>
+            <h4>Réunions Mensuelles</h4>
+            <p>Chaque dernier dimanche du mois, nous nous retrouvons pour prier, partager et grandir ensemble. Rejoins la famille !</p>
+            <img src="/images_Church/croix_2.jpg" alt="Réunion Mensuelle" class="card-image" loading="lazy">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 p-4 shadow-sm">
+            <i class="fas fa-handshake fa-2x mb-3"></i>
+            <h4>Rencontres et Partages d'événements</h4>
+            <p>Échangeons nos expériences de foi et renforçons notre fraternité dans un cadre convivial et ouvert.</p>
+            <img src="/images_Church/lecture_bible.jpg" alt="Rencontres et Partages" class="card-image" loading="lazy">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 p-4 shadow-sm">
+            <i class="fas fa-music fa-2x mb-3"></i>
+            <h4> Louange </h4>
+            <p>Connecte-toi à Dieu à travers des moments puissants de musique et d'adoration. !</p>
+            <img src="/images_Church/instruments.jpg" alt="Soirées de Louange" class="card-image" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <section class="mt-5" id="calendrier">
+        <h3><i class="fas fa-calendar-check me-2"></i>Calendrier des événements</h3>
+        <div class="d-flex justify-content-center align-items-center mb-3">
+          <button class="btn btn-custom-primary me-2" onclick="changeMonth(-1)">◀ Précédent</button>
+          <span id="month-label" class="fw-bold"></span>
+          <button class="btn btn-custom-primary ms-2" onclick="changeMonth(1)">Suivant ▶</button>
+        </div>
+        <div id="calendar" class="calendar-grid"></div>
+      </section>
+
+      <section class="mt-5" id="affiches">
+        <h3><i class="fas fa-bullhorn me-2"></i>Affiches et annonces</h3>
+        <p class="lead">Découvrez nos prochains événements en un coup d'œil !</p>
+        <div class="row g-4 mt-4">
+          <div class="col-md-4">
+            <img src="/images_Church/seminaire.jpeg" alt="Affiche événement 1" class="img-fluid rounded shadow-sm" loading="lazy">
+          </div>
+         <div class="col-md-4">
+            <img src="/images_Church/camp2025_1.jpg" alt="Affiche événement 3" class="img-fluid rounded shadow-sm" loading="lazy">
+          </div>
+          <div class="col-md-4">
+            <img src="/images_Church/camp2025.jpg" alt="Affiche événement 2" class="img-fluid rounded shadow-sm" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-5" id="temoignages">
+        <h3 class="section-title"><i class="fas fa-comment-alt me-2"></i>Témoignages</h3>
+        <p class="lead">Découvrez les histoires de foi qui nous inspirent.</p>
+        <div id="temoignages-container" class="row g-4 mt-4">
+          <div class="col-md-6 mb-4">
+            <div class="card p-4 shadow-sm h-100">
+              <p class="testimonial-text">"Grâce aux enseignements, j'ai trouvé la force de surmonter des difficultés dans ma vie. La communauté est un vrai soutien."</p>
+              <footer class="blockquote-footer text-end mt-2">Un Jeune</footer>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card p-4 shadow-sm h-100">
+              <p class="testimonial-text">"Le séminaire a été une révélation pour moi. J'ai compris comment appliquer la parole de Dieu dans mon quotidien."</p>
+              <footer class="blockquote-footer text-end mt-2">Une Jeune</footer>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-5" id="submit-temoignage">
+        <h3 class="section-title"><i class="fas fa-pen-nib me-2"></i>Partage ton témoignage</h3>
+        <p class="lead">Écris-nous comment Dieu a agi dans ta vie. Ton histoire peut en inspirer d'autres !</p>
+        <div class="card p-4 shadow-sm">
+          <div class="mb-3 text-start">
+            <label for="testimonial-name" class="form-label">Ton nom</label>
+            <input type="text" class="form-control" id="testimonial-name" placeholder="Entrez votre nom" required>
+          </div>
+          <div class="mb-3 text-start">
+            <label for="testimonial-text" class="form-label">Ton témoignage</label>
+            <textarea class="form-control" id="testimonial-text" rows="5" placeholder="Écris ton témoignage ici..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-custom-primary" id="submit-testimonial">Envoyer mon témoignage</button>
+        </div>
+      </section>
+
+      <section class="mt-5" id="prayer-request">
+        <h3 class="section-title"><i class="fas fa-praying-hands me-2"></i>Requêtes de prière</h3>
+        <p class="lead">Partagez vos besoins de prière. La communauté des jeunes est là pour vous soutenir.</p>
+        <div class="card p-4 shadow-sm">
+          <div class="mb-3 text-start">
+            <label for="prayer-request-name" class="form-label">Ton nom</label>
+            <input type="text" class="form-control" id="prayer-request-name" placeholder="Nom ou Anonyme" required>
+          </div>
+          <div class="mb-3 text-start">
+            <label for="prayer-request-text" class="form-label">Ta requête</label>
+            <textarea class="form-control" id="prayer-request-text" rows="5" placeholder="Écris ta requête ici..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-custom-primary" id="submit-prayer-request">Envoyer ma requête</button>
+        </div>
+      </section>
+
+      <section class="mt-5" id="ressources">
+        <h3 class="section-title"><i class="fas fa-book-open me-2"></i>Ressources utiles</h3>
+        <p class="lead">Des outils pour grandir dans la foi, à la maison, à l'école ou au travail.</p>
+        <div class="row g-4 mt-4">
+          <div class="col-md-4">
+            <div class="card p-4 shadow-sm h-100">
+              <a href="#" class="resource-link"><i class="fas fa-bible fa-3x mb-3"></i></a>
+              <h4>Applications Bibliques</h4>
+              <p>Des applications mobiles pour lire la Bible, méditer et prier partout.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card p-4 shadow-sm h-100">
+              <a href="#" class="resource-link"><i class="fas fa-podcast fa-3x mb-3"></i></a>
+              <h4>Podcasts inspirants</h4>
+              <p>Écoutez des sermons et des témoignages qui fortifient l'âme.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card p-4 shadow-sm h-100">
+              <a href="#" class="resource-link"><i class="fas fa-users-cog fa-3x mb-3"></i></a>
+              <h4>Groupes d'études</h4>
+              <p>Rejoignez un groupe d'étude biblique pour échanger et approfondir votre foi.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-5" id="quiz-and-quotes">
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <h3 class="text-center"><i class="fas fa-question-circle me-2"></i>Quiz Biblique</h3>
+            <div class="card quiz-card p-4 shadow-sm">
+              <div id="quiz-container">
+                <h5 id="quiz-question" class="mb-4">Chargement des questions...</h5>
+                <div id="quiz-options" class="d-grid gap-2 col-6 mx-auto">
+                </div>
+                <p id="quiz-result" class="mt-3 text-center"></p>
+                <div id="quiz-score" class="mt-3 text-center" style="display: none;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <h3 class="text-center"><i class="fas fa-lightbulb me-2"></i>Pensée du jour</h3>
+            <div class="card quote-card p-4 shadow-sm">
+              <div class="quote-content">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <p id="daily-quote" class="quote-text"></p>
+                <i class="fas fa-quote-right quote-icon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-5" id="galerie">
+        <h3 class="text-center"><i class="fas fa-images me-2"></i>Galerie</h3>
+        <p class="lead text-center">Souvenirs de nos moments de joie et de partage.</p>
+        <div id="carousel-galerie" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/images_Church/jeune_louange.jpg" class="d-block w-100 gallery-img" alt="Louange" loading="lazy">
+            </div>
+            <div class="carousel-item">
+              <img src="/images_Church/jeunes_reunion.jpg" class="d-block w-100 gallery-img" alt="Réunion des jeunes" loading="lazy">
+            </div>
+            <div class="carousel-item">
+              <img src="/images_Church/salle_seminaire.jpg" class="d-block w-100 gallery-img" alt="Salle de séminaire" loading="lazy">
+            </div>
+            <div class="carousel-item">
+              <img src="/images_Church/Groupe_discussion.jpg" class="d-block w-100 gallery-img" alt="Groupe de discussion" loading="lazy">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel-galerie" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Précédent</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel-galerie" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Suivant</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="mt-5" id="contact">
+        <h3 class="section-title"><i class="fas fa-envelope me-2"></i>Contact</h3>
+        <p class="lead">Une question, une suggestion ou une demande de prière ? Écrivez-nous !</p>
+        <form class="contact-form">
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Votre nom" required>
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Votre email" required>
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="5" placeholder="Votre message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer-custom py-4 mt-5">
+    <div class="container text-center">
+      <p>&copy; 2024 Jeunesse TPR. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
