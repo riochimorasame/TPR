@@ -1,0 +1,362 @@
+/* ==================== Variables ==================== */
+:root {
+  --primary-color: #ff6b6b; /* Un rouge vif et joyeux */
+  --secondary-color: #4ecdc4; /* Un vert-bleu dynamique */
+  --accent-color: #ffa500; /* Un orange énergique */
+  --bg-light-color: #f7f9fc; /* Un gris très clair */
+  --bg-white-color: #ffffff;
+  --text-dark-color: #2d3436; /* Un gris anthracite */
+  --text-light-color: #ffffff;
+  --footer-bg-color: #2c3e50; /* Un bleu foncé */
+  --font-primary: 'Balsamiq Sans', cursive; /* Police d'écriture amusante */
+  --font-secondary: 'Nunito', sans-serif; /* Police de texte moderne */
+}
+
+/* ==================== Style général ==================== */
+body {
+  font-family: var(--font-secondary);
+  background: linear-gradient(135deg, var(--bg-light-color) 0%, #eef1f5 100%);
+  color: var(--text-dark-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, .section-title {
+  font-family: var(--font-primary);
+  color: var(--primary-color);
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+p.lead {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  color: #555;
+}
+
+.section-padding {
+  padding: 60px 0;
+}
+
+/* ==================== Barre de navigation ==================== */
+.navbar-custom {
+  background: var(--bg-white-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-family: var(--font-primary);
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+.nav-link {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  color: var(--text-dark-color) !important;
+  margin: 0 10px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--secondary-color) !important;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+/* ==================== Slider ==================== */
+.slider-container {
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slider-image.active {
+  opacity: 1;
+}
+
+/* ==================== Sections principales ==================== */
+.card {
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card .fas, .card .far {
+  color: var(--secondary-color);
+  font-size: 2.5rem;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+/* ==================== Boutons ==================== */
+.btn-custom-primary {
+  background-color: var(--primary-color);
+  color: var(--text-light-color);
+  border-color: var(--primary-color);
+  font-family: var(--font-primary);
+  font-weight: 700;
+  border-radius: 50px;
+  padding: 12px 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-custom-primary:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--text-light-color);
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: var(--bg-light-color) !important;
+  color: var(--text-dark-color) !important;
+  border-color: var(--bg-light-color) !important;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #e2e6ea !important;
+  transform: scale(1.02);
+}
+
+/* ==================== Calendrier ==================== */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.calendar-day {
+  padding: 10px;
+  background-color: var(--bg-white-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-day.day-header {
+  font-weight: bold;
+  background-color: var(--secondary-color);
+  color: var(--text-light-color);
+}
+
+.calendar-day.future-event {
+  background-color: var(--secondary-color);
+  color: var(--text-light-color);
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(78, 205, 196, 0.3);
+}
+
+.calendar-day.past-event {
+  background-color: #ff6b6b;
+  color: var(--text-light-color);
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+}
+
+/* ==================== Fenêtre Modale (Pop-up) ==================== */
+.modal-content {
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+  color: #aaa;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Galerie d'images */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.image-gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #e9ecef;
+  padding: 5px;
+}
+
+.image-gallery img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ==================== Pensée du jour (Quote Card) ==================== */
+.quote-card {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #3bb9b0 100%);
+  color: var(--text-light-color);
+  border-left: 5px solid var(--accent-color);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.quote-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.quote-content {
+  position: relative;
+  padding: 20px;
+  z-index: 1;
+}
+
+.quote-icon {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+}
+
+.fa-quote-left {
+  top: 10px;
+  left: 10px;
+}
+
+.fa-quote-right {
+  bottom: 10px;
+  right: 10px;
+}
+
+.quote-text {
+  font-family: var(--font-primary);
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: bold;
+  margin: 0;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* ==================== Quiz Biblique ==================== */
+.quiz-card {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #ff8c8c 100%);
+  color: var(--text-light-color);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quiz-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+#quiz-question {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+#quiz-options .btn {
+  background-color: var(--bg-white-color);
+  color: var(--text-dark-color);
+  border: 1px solid #ddd;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#quiz-options .btn:hover {
+  background-color: var(--bg-light-color);
+  transform: translateY(-3px);
+}
+
+#quiz-options .btn.btn-success {
+  background-color: var(--secondary-color) !important;
+  color: var(--text-light-color) !important;
+  border-color: var(--secondary-color) !important;
+  animation: bounce 0.5s ease-in-out;
+}
+
+#quiz-options .btn.btn-danger {
+  background-color: var(--accent-color) !important;
+  color: var(--text-light-color) !important;
+  border-color: var(--accent-color) !important;
+  animation: shake 0.5s ease-in-out;
+}
+
+#quiz-result {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animations supplémentaires */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
